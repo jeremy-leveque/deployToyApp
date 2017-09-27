@@ -63,6 +63,16 @@ Go to your browser : `<IP>:8000`
 ## Next steps
 
 ### Add domain name
+L'ajout d'un nom de domaine se fait via un DNS (domain name system).
+
+#### Modification du fichier de zone OVH : http://docs.aws.amazon.com/fr\_fr/Route53/latest/DeveloperGuide/MigratingDNS.html
+ - création d'un fichier de zones côté AWS
+ - récupération du fichier de zones OVH puis importation dans la console Route 53
+ - problème de TTL : il faut un seul TTL par type d'entrée, pour que l'import fonctionne. Fichier OVH : deux TTL pour les types TXT -> il faut en enlever une
+ - récupérer les NS AWS et les mettre côté OVH 
+ 
+ #### Autre solution : créer un nom de domaine chez Amazon
+https://aws.amazon.com/fr/getting-started/tutorials/get-a-domain/
 
 ### AWS ECS
 
